@@ -1,0 +1,28 @@
+name: Style Check
+
+on:
+  push:
+    paths:
+      - "**/*.c"
+      - "**/*.h"
+      - ".github/**"
+  pull_request:
+    paths:
+      - "**/*.c"
+      - "**/*.h"
+      - ".github/**"
+
+jobs:
+  style:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Build style-check Docker image
+        run: |
+          docker build -t style-check -f .github/docker/Dockerfile .
+
+      - name: Run style checks inside container
+        run: |
+          docker run --rm -v "${{ github.workspace }}:/workspace" -w /workspace style-check

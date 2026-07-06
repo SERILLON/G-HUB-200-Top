@@ -1,23 +1,26 @@
 /*
 ** EPITECH PROJECT, 2026
-** top structures header
+** top
+** File description:
+** top
 */
 
+
 #ifndef TOP_H
-#define TOP_H
+    #define TOP_H
 
-#include <sys/types.h>
-#include <time.h>
-#include <unistd.h>
-#include <stdint.h>
-#include <ncurses.h>
+    #include <sys/types.h>
+    #include <time.h>
+    #include <unistd.h>
+    #include <stdint.h>
+    #include <ncurses.h>
 
-#define USER_MAX_LEN 32
-#define HOSTNAME_MAX_LEN 256
-#define COMMAND_MAX_LEN 256
-#define UPTIME_MAX_LEN 64
-#define SUCCESS 0
-#define ERROR 84
+    #define USER_MAX_LEN 32
+    #define HOSTNAME_MAX_LEN 256
+    #define COMMAND_MAX_LEN 256
+    #define UPTIME_MAX_LEN 64
+    #define SUCCESS 0
+    #define ERROR 84
 
 typedef struct top_load_s {
     double one;
